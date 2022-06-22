@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css\normalize.css">
+  <link rel="stylesheet" href="css\all.min.css">
+  <link rel="stylesheet" href="css\styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="./js/main.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap"
+    rel="stylesheet">
+  <title>Movflx - Online Movies & Tv Shows</title>
+</head>
+
+<body>
+  <div class="overlay"></div>
+  <div class="scroll-to-top">
+    <i class="fas fa-angle-up"></i>
+  </div>
+  <div class="banner">
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img src="./imgs/logo.png" alt="logo">
+        </div>
+        <nav>
+          <ul class="navbar">
+            <li class="mobile-menu-head">
+              <div class="logo">
+                <img src="./imgs/logo.png" alt="logo">
+              </div>
+              <div class="menu-closer" data-menu="header .navbar">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="./" class="title active">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="./anime/" class="title">Anime</a>
+            </li>
+            <li class="nav-item menu-parent">
+              <a href="#" class="title">My List</a>
+              <ul class="mega-menu">
+                <li class="menu-item">
+                  <a href="./demo-user/watch-list/">Watch List</a>
+                </li>
+                <li class="menu-item">
+                  <a href="./demo-user/wait-list/">Waitlist</a>
+                </li>
+              </ul>
+              <div class="menu-opener" data-menu="header nav .mega-menu">
+                <i class="fas fa-angle-down"></i>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="./login/" class="title">Login</a>
+            </li>
+            <li class="nav-item">
+              <a href="./signup/" class="title">Sign Up</a>
+            </li>
+            <div class="social-links">
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </ul>
+          <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div class="lang">
+            <i class="fa-solid fa-globe"></i>
+            <select name="lang" id="lang">
+              <option value="EN">EN</option>
+              <option value="EN">AR</option>
+            </select>
+          </div>
+          <div class="menu-opener" data-menu="header .navbar"><i class="fa-solid fa-bars"></i></div>
+        </nav>
+      </div>
+    </header>
+    <div class="main-sec">
+      <div class="container">
+        <h5 class="title">Movflx</h5>
+        <h1 class="heading">
+          Unlimitid <span>Movie</span>, Anime, <br> & More.
+        </h1>
+        <div class="info top-movie">
+          <span class="age-c">-</span>
+          <span class="quality">HD</span>
+          <span class="categories"><a href="./categories/action">action</a>, <a
+              href="./categories/drama">Drama</a></span>
+          <span class="date">
+            <i class="fa-solid fa-calendar-days"></i> 2022
+          </span>
+          <span class="time"><i class="fa-solid fa-clock"></i> 120 min</span>
+        </div>
+        <a href="./watch?name=one-piece" class="watch"><i class="fas fa-play"></i> Watch Now</a>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="movies">
+    <div class="container">
+    </div>
+  </div>
+</body>
+
+</html>
