@@ -72,29 +72,39 @@ $(document).ready(function () {
   });
 });
 
-// Get Info From Api 
+// Get Info From Api
 
 let images = document.querySelectorAll(".movies .content .box .image img");
+window.addEventListener("resize" ,resizeImgsP)
+resizeImgsP();
 
-images.forEach((image) => {
-  getImageSize(image, function (width, height) {
-    image.parentElement.style.width = width + "px";
-    image.parentElement.style.height = height + "px";
+function resizeImgsP() {
+  images.forEach((image) => {
+    getImageSize(image, function (height) {
+      image.parentElement.style.height = height + "px";
+    });
   });
-})
+}
 
-
-/**
-  * @param {Element} $img 
-*/
 function getImageSize($img, resizeImage) {
   var wait = setInterval(function () {
     let imageDimentions = $img.getBoundingClientRect();
-    let w = imageDimentions.width,
-      h = imageDimentions.height;
-    if (w && h) {
+    let h = imageDimentions.height;
+    if (h) {
       clearInterval(wait);
-      resizeImage.apply(this, [w, h]);
+      resizeImage.apply(this, [ h]);
     }
   }, 30);
 }
+
+// Show Movie Discription On Hover
+
+let discriptionEs = document.querySelectorAll(
+  ".movies .box .image .discription"
+);
+
+discriptionEs.forEach((el) => {
+  let discriptContent = el.querySelector(".discript-content");
+  let discriptContentWidth = discriptContent.getBoundingClientRect().width;
+  el.style.bottom = `-${discriptContentWidth}px`;
+});
