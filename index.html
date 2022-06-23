@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="css\all.min.css">
   <link rel="stylesheet" href="css\styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="./js/main.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -99,9 +98,9 @@
           <span class="categories"><a href="./categories/action">action</a>, <a
               href="./categories/drama">Drama</a></span>
           <span class="date">
-            <i class="fa-solid fa-calendar-days"></i> 2022
+            <i class="far fa-calendar-alt"></i> 2022
           </span>
-          <span class="time"><i class="fa-solid fa-clock"></i> 120 min</span>
+          <span class="time"><i class="far fa-clock"></i> 120 min</span>
         </div>
         <a href="./watch?name=one-piece" class="watch"><i class="fas fa-play"></i> Watch Now</a>
 
@@ -111,8 +110,90 @@
 
   <div class="movies">
     <div class="container">
+      <div class="main-heading">
+        <div class="sub">Online Streaming</div>
+        <h2>Latest Added</h2>
+      </div>
+      <div class="categories">
+        <button class="catg" data-catg="movies">Movies</button>
+        <button class="catg" data-catg="znime">Anime</button>
+        <button class="catg" data-catg="documentry">Documentry</button>
+      </div>
+      <div class="content">
+        <div class="box">
+          <div class="image">
+            <img src="./imgs/movie-1.jpg" alt="">
+            <div class="discription">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</div>
+          </div>
+          <div class="info">
+            <div class="name">Sherlock Hollmes</div>
+            <div class="year">2022</div>
+          </div>
+          <div class="info">
+            <div class="quality">HD</div>
+            <div class="rate-dur">
+              <div class="durqation">
+                <i class="far fa-clock"></i>
+                <span>120 min</span>
+              </div>
+              <div class="rate">
+                <i class="fas fa-thumbs-up"></i>
+                <span>2.6 k</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="image">
+            <img src="./imgs/movie-2.jpg" alt="">
+            <div class="discription">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</div>
+          </div>
+          <div class="info">
+            <div class="name">Interstellar</div>
+            <div class="year">2014</div>
+          </div>
+          <div class="info">
+            <div class="quality">HD</div>
+            <div class="rate-dur">
+              <div class="durqation">
+                <i class="far fa-clock"></i>
+                <span>169 min</span>
+              </div>
+              <div class="rate">
+                <i class="fas fa-thumbs-up"></i>
+                <span>2.6 k</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="image">
+            <img src="./imgs/movie-3.jpg" alt="">
+            <div class="discription">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</div>
+          </div>
+          <div class="info">
+            <div class="name">Joker (2019)</div>
+            <div class="year">2019</div>
+          </div>
+          <div class="info">
+            <div class="quality">HD</div>
+            <div class="rate-dur">
+              <div class="durqation">
+                <i class="far fa-clock"></i>
+                <span>120 min</span>
+              </div>
+              <div class="rate">
+                <i class="fas fa-thumbs-up"></i>
+                <span>2.6 k</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
     </div>
   </div>
 </body>
+<script src="./js/main.js"></script>
 
 </html>

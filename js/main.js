@@ -40,7 +40,7 @@ $(document).ready(function () {
   });
 
   // Show Header And Scroll Top Button On Scroll
-  
+
   let header = $("header");
   let scrollTop = $(".scroll-to-top");
 
@@ -72,3 +72,29 @@ $(document).ready(function () {
   });
 });
 
+// Get Info From Api 
+
+let images = document.querySelectorAll(".movies .content .box .image img");
+
+images.forEach((image) => {
+  getImageSize(image, function (width, height) {
+    image.parentElement.style.width = width + "px";
+    image.parentElement.style.height = height + "px";
+  });
+})
+
+
+/**
+  * @param {Element} $img 
+*/
+function getImageSize($img, resizeImage) {
+  var wait = setInterval(function () {
+    let imageDimentions = $img.getBoundingClientRect();
+    let w = imageDimentions.width,
+      h = imageDimentions.height;
+    if (w && h) {
+      clearInterval(wait);
+      resizeImage.apply(this, [w, h]);
+    }
+  }, 30);
+}
