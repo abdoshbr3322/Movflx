@@ -19,13 +19,17 @@ $(document).ready(function () {
     }
   }
   function checkWindowSize() {
+    let signUp = document.querySelector("header nav ul li.signup a");
+    console.log(signUp)
     if (window.innerWidth >= 992) {
       megaMenu.css("display", "none");
       megaMenu.addClass("desktop");
+      $(signUp).addClass("custom-btn");
     } else {
       megaMenu.removeClass("desktop");
       megaMenu.css("display", "block");
       megaMenuOpener.unbind("mouseenter mouseleave");
+      $(signUp).removeClass("custom-btn");
     }
   }
 
@@ -97,14 +101,3 @@ function getImageSize($img, resizeImage) {
   }, 30);
 }
 
-// Show Movie Discription On Hover
-
-let discriptionEs = document.querySelectorAll(
-  ".movies .box .image .discription"
-);
-
-discriptionEs.forEach((el) => {
-  let discriptContent = el.querySelector(".discript-content");
-  let discriptContentWidth = discriptContent.getBoundingClientRect().width;
-  el.style.bottom = `-${discriptContentWidth}px`;
-});
