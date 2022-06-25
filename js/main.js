@@ -20,15 +20,12 @@ $(document).ready(function () {
   }
   function checkWindowSize() {
     let signUp = document.querySelector("header nav ul li.signup a");
-    console.log(signUp)
     if (window.innerWidth >= 992) {
-      megaMenu.css("display", "none");
-      megaMenu.addClass("desktop");
+      megaMenu.css("display", "none").addClass("desktop");
       $(signUp).addClass("custom-btn");
     } else {
-      megaMenu.removeClass("desktop");
-      megaMenu.css("display", "block");
-      megaMenuOpener.unbind("mouseenter mouseleave");
+      megaMenu.removeClass("desktop").css("display", "block");
+      megaMenuOpener.off("hover");
       $(signUp).removeClass("custom-btn");
     }
   }
@@ -66,7 +63,7 @@ $(document).ready(function () {
     }
   }
 
-  // make the logic of scroll top button
+  // make the scroll top button
 
   scrollTop.click(() => {
     window.scrollTo({
@@ -74,30 +71,27 @@ $(document).ready(function () {
       behavior: "smooth",
     });
   });
-});
 
-// Get Info From Api
+  // Reize Images
 
-let images = document.querySelectorAll(".movies .content .box .image img");
-window.addEventListener("resize" ,resizeImgsP)
-resizeImgsP();
+  let images = $(".movies .content .box .image img");
+  $(window).resize(resizeImgs);
+  resizeImgs();
 
-function resizeImgsP() {
-  images.forEach((image) => {
-    getImageSize(image, function (height) {
-      image.parentElement.style.height = height + "px";
+  function resizeImgs() {
+    images.each(function (index, image) {
+      getImageSize($(image), function (height) {
+        $(image).parent().height(height);
+      });
     });
-  });
-}
+  }
 
-function getImageSize($img, resizeImage) {
-  var wait = setInterval(function () {
-    let imageDimentions = $img.getBoundingClientRect();
-    let h = imageDimentions.height;
-    if (h) {
-      clearInterval(wait);
-      resizeImage.apply(this, [ h]);
-    }
-  }, 30);
-}
-
+  function getImageSize($img, resizeImage) {
+    let resize = () => {
+      let h = $img.height();
+      resizeImage(h);
+    };
+    resize();
+    $img.on("load", resize)
+  }
+});
