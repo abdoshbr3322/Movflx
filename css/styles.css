@@ -37,7 +37,7 @@ ul {
 a {
   text-decoration: none;
 }
-input {
+input ,select ,option ,textarea {
   border: none;
   outline: none;
 }
@@ -676,6 +676,7 @@ header .lang select option {
 }
 .subscribe {
   background-image: url("../imgs/subscribe_bg.jpg");
+  background-color: var(--main-color);
   padding: 45px 0;
 }
 @media (max-width: 991px) {
@@ -744,7 +745,7 @@ header .lang select option {
   border-radius: 4px;
   cursor: pointer;
   transition: 0.4s;
-  border: 1px solid currentColor;
+  border: 1px solid var(--section-bg-color);
 }
 @media (max-width: 767px) {
   .subscribe form input[type="submit"] {

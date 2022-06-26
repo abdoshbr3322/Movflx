@@ -23,7 +23,7 @@ $(document).ready(function () {
     let signUp = document.querySelector("header nav ul li.signup a");
     if (window.innerWidth >= 992) {
       menu.removeClass("menu-active");
-      $(document.body).removeClass("menu-active")
+      $(document.body).removeClass("menu-active");
       megaMenu.css("display", "none").addClass("desktop");
       $(signUp).addClass("custom-btn");
     } else {
@@ -50,7 +50,7 @@ $(document).ready(function () {
   overlay.click(() => {
     menu.removeClass("menu-active");
     $(document.body).removeClass("menu-active");
-  })
+  });
 
   // Show Header And Scroll Top Button On Scroll
 
@@ -106,3 +106,17 @@ $(document).ready(function () {
     }
   }
 });
+
+// const key = "7fc9363d34mshca4b24f8e510b2ap117c58jsnc0678d35766b";
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': key,
+// 		'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com'
+// 	}
+// };
+
+// fetch('https://online-movie-database.p.rapidapi.com/auto-complete?q=tt0388629', options)
+// 	.then(response => response.json())
+// 	.then(response => console.log(response))
+// 	.catch(err => console.error(err));
