@@ -75,3 +75,8 @@
   font-weight: bold;
   margin-bottom: 20px;
 }
+.space-between-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

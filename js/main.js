@@ -2,6 +2,7 @@ $(document).ready(function () {
   // Open Mega Menu On Hover On Desktop
   let megaMenuOpener = $("header nav ul li.menu-parent");
   let megaMenu = $("header nav ul li.menu-parent .mega-menu");
+  let menu = $("nav ul");
   toggleDesktopMenu();
   $(window).resize(toggleDesktopMenu);
 
@@ -21,6 +22,8 @@ $(document).ready(function () {
   function checkWindowSize() {
     let signUp = document.querySelector("header nav ul li.signup a");
     if (window.innerWidth >= 992) {
+      menu.removeClass("menu-active");
+      $(document.body).removeClass("menu-active")
       megaMenu.css("display", "none").addClass("desktop");
       $(signUp).addClass("custom-btn");
     } else {
@@ -39,6 +42,15 @@ $(document).ready(function () {
       $(document.body).toggleClass("menu-active");
     }
   });
+
+  // Close Menu On Blur
+
+  let overlay = $("nav .overlay");
+
+  overlay.click(() => {
+    menu.removeClass("menu-active");
+    $(document.body).removeClass("menu-active");
+  })
 
   // Show Header And Scroll Top Button On Scroll
 
