@@ -75,23 +75,22 @@ $(document).ready(function () {
   // Reize Images
 
   let images = $(".movies .content .box .image img");
-  $(window).resize(resizeImgs);
   resizeImgs();
+  $(window).resize(resizeImgs);
 
   function resizeImgs() {
-    images.each(function (index, image) {
-      getImageSize($(image), function (height) {
-        $(image).parent().height(height);
-      });
-    });
+    images.each(getImageSize);
   }
 
-  function getImageSize($img, resizeImage) {
-    let resize = () => {
+  function getImageSize(index, image) {
+    let $img = $(image);
+    let load = setInterval(resize, 1);
+    function resize() {
       let h = $img.height();
-      resizeImage(h);
-    };
-    resize();
-    $img.on("load", resize)
+      if (h > 0) {
+        $img.parent().height(h);
+        clearInterval(load);
+      }
+    }
   }
 });
