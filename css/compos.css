@@ -1,8 +1,4 @@
-.items-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .main-p-style {
   font-size: 14px;
   font-weight: 500;
@@ -78,5 +74,18 @@
 .space-between-items {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.items-centered-v {
+  display: flex;
+  align-items: center;
+}
+.items-centered-h {
+  display: flex;
+  justify-content: center;
+}
+.items-centered-b {
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
