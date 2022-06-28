@@ -120,3 +120,19 @@ $(document).ready(function () {
 // 	.then(response => response.json())
 // 	.then(response => console.log(response))
 // 	.catch(err => console.error(err));
+
+const apiURL = "https://imdb-api.com/en/API/MostPopularMovies/";
+const apiKey = "k_62onzirj";
+
+fetch("https://imdb-api.com/API/AdvancedSearch/k_62onzirj?title=sherlock", {
+  method: "GET",
+})
+  .then((response) => {
+    return response.json();
+  })
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((err) => {
+    throw new Error(err);
+  });
