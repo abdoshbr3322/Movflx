@@ -460,6 +460,7 @@ header .lang select option {
   display: grid;
   grid-template-columns: 1fr;
   gap: 60px 30px;
+  position: relative;
 }
 @media (min-width: 576px) {
   .movies .content {
@@ -487,14 +488,13 @@ header .lang select option {
 }
 @keyframes load-image {
   to {
-    background-color: rgba(221, 214, 214, 0.8);
+    background-color: rgba(216, 206, 206, 0.8);
   }
 }
 .movies .box .image img {
   width: 100%;
-  height: auto;
   object-fit: cover;
-  object-position: right;
+  
 }
 .movies .box .image .box-overlay {
   position: absolute;
@@ -526,6 +526,7 @@ header .lang select option {
   color: var(--main-white-color);
   font-weight: bold;
   font-size: 18px;
+  line-height: 1.4;
 }
 .movies .box .image .discription .discript-content {
   padding-top: 30px;
@@ -833,7 +834,7 @@ footer .footer-menu form {
 }
 footer .footer-menu form input[type="search"] {
   width: 240px;
-  padding: 14px 30px 14px 20px;
+  padding: 14px 50px 14px 20px;
   background-color: #12151e;
   border-radius: 30px;
   color: white;
