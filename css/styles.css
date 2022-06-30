@@ -494,7 +494,6 @@ header .lang select option {
 .movies .box .image img {
   width: 100%;
   object-fit: cover;
-  
 }
 .movies .box .image .box-overlay {
   position: absolute;
@@ -505,7 +504,7 @@ header .lang select option {
   background-image: linear-gradient(
     to bottom,
     transparent,
-    rgba(22, 11, 11, 0.76) 65%
+    rgba(2, 1, 1, 0.76) 65%
   );
   opacity: 0;
   transition: var(--secondary-transition);

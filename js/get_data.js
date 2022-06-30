@@ -85,7 +85,7 @@ function resizeImgs() {
 
   function getImageSize(index, image) {
     let $img = $(image);
-    let load = setInterval(resize, 1);
+    let load = setInterval(resize, 30);
     function resize() {
       let h = $img.height();
       if (h > 0) {
