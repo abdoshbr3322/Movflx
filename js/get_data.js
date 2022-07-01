@@ -3,7 +3,7 @@ const latestApi = `https://imdb-api.com/en/API/MostPopularMovies/${apiKey}`;
 const topRatedApi = `https://imdb-api.com/en/API/Top250Movies/${apiKey}`;
 
 let apis = [latestApi, topRatedApi];
-let blocked = ["tt10298810" ,"tt0110912"]
+let blocked = ["tt10298810", "tt0110912"];
 
 export async function fetchData(api) {
   let request = fetch(api, {
@@ -21,29 +21,7 @@ for (let i = 0; i < apis.length; i++) {
   addDataToBoxs(data, boxParents[i]);
 }
 
-let box = document.createElement("div");
-box.className = "box";
-box.innerHTML = `<div class="image">
-    <div class="box-overlay"></div>
-    <img src="./imgs/movie-1.jpg" alt="">
-    <div class="discription">
-      <div class="title">Sherlock Holmes</div>
-      <div class="discript-content">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-      </div>
-    </div>
-  </div>
-  <div class="info space-between-items">
-    <div class="name">Sherlock Holmes</div>
-    <div class="rate">
-      <span>0.0</span>
-      <i class="fas fa-star"></i>
-    </div>
-  </div>
-  <div class="info space-between-items">
-    <div class="quality">HD</div>
-    <a href="./watch/" class="watch custom-btn"><i class="fas fa-play"></i> Watch</a>
-  </div>`;
+let box = document.querySelector(".movies .content .box").remove();
 
 /**
  * @param {Promise} data
@@ -54,7 +32,7 @@ async function addDataToBoxs(data, boxParent) {
   let info = await data;
   $(boxParent).empty();
   for (let i = 0; i < (info.length > 25 ? 25 : info.length); i++) {
-    if (blocked.indexOf(info[i].id) > -1) continue; 
+    if (blocked.indexOf(info[i].id) > -1) continue;
     let ID;
     let movieBox = box.cloneNode(true);
     ({
@@ -75,24 +53,31 @@ async function addDataToBoxs(data, boxParent) {
 // Resize Images
 
 function resizeImgs() {
-  let images = $(".movies .content .box .image img");
+  let images = Array.from(document.querySelectorAll(".movies .content .box .image img"));
   callImgs();
-  $(window).resize(callImgs);
+  window.onresize = callImgs;
 
   function callImgs() {
-    images.each(getImageSize);
+    images.forEach(getImageSize);
   }
 
-  function getImageSize(index, image) {
-    let $img = $(image);
-    let load = setInterval(resize, 30);
+  /**
+   * @param {number} index
+   * @param {Element} image
+   */
+  function getImageSize(image) {
+    let h;
+    let load = () => {
+      setTimeout(resize ,30);
+    }
     function resize() {
-      let h = $img.height();
+      h = image.getBoundingClientRect().height;
       if (h > 0) {
-        $img.height("100%");
-        $img.parent().height("calc(100% - 73px)");
-        clearInterval(load);
+        image.style.height = "100%";
+        image.parentElement.style.height = "calc(100% - 73px)";
+        return;
       }
+      load();
     }
   }
 }
