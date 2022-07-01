@@ -95,6 +95,7 @@ button {
 }
 header {
   transition: var(--main-transition);
+  overflow: hidden;
 }
 @media (max-width: 991px) {
   header {
