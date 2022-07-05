@@ -1,0 +1,230 @@
+@use "../helpers/globals" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/placeholders" as *;
+// the header section style
+
+.banner {
+  overflow-x: hidden;
+}
+header {
+  @media (max-width: 991px) {
+    padding: 20px 0;
+  }
+  &.fixed {
+    @include position-style(fixed, -100px, 0);
+    transition: $main-transition;
+    transform: translateY(100px);
+    width: 100%;
+    background-color: $section-bg-color;
+    z-index: 99;
+  }
+  nav {
+    .menu-opener {
+      @include text-style(30px, null, #fff);
+      margin-left: 20px;
+      cursor: pointer;
+      @media (min-width: 992px) {
+        & {
+          display: none;
+        }
+      }
+    }
+    .overlay {
+      @include position-style(fixed, 0, 0);
+      width: 0;
+      height: 100vh;
+      background-color: #000;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity $main-transition;
+    }
+    ul {
+      .mobile-menu-head,
+      .social-links {
+        display: none;
+      }
+      .mobile-menu-head {
+        padding: 30px 15px;
+      }
+      li.nav-item {
+        position: relative;
+      }
+      li > a {
+        @include text-style(14px, bold, $main-white-color);
+        display: inline-block;
+        width: 100%;
+        transition: $main-transition;
+        text-transform: uppercase;
+        padding: 38px 20px;
+        &:hover,
+        &.active {
+          @extend %main-color;
+        }
+      }
+    }
+    @media (max-width: 991px) {
+      ul.navbar {
+        flex-direction: column;
+        @include position-style(fixed, 0, null, null, -400px);
+        width: 300px;
+        min-height: 100vh;
+        background-color: $section-bg-color;
+        transition: $secondary-transition ease-out;
+        z-index: 99999;
+        .mobile-menu-head {
+          @include flex(space-between, center);
+        }
+        .mobile-menu-head .menu-closer {
+          @include text-style(25px, null, white);
+          cursor: pointer;
+        }
+        .social-links a {
+          @include text-style(16px, null, $main-white-color);
+          transition: $main-transition;
+        }
+        &.menu-active {
+          right: 0;
+        }
+      }
+      ul {
+        &.menu-active a:hover {
+          color: $main-color;
+        }
+        &.menu-active a:not(:last-child) {
+          margin-right: 20px;
+        }
+        li {
+          width: 100%;
+          padding: 15px 25px;
+          border-bottom: 1px solid #ffffff1a;
+        }
+        li a {
+          padding: 0 !important;
+          @include text-style(15px, 600);
+        }
+      }
+    }
+    @media (max-width: 576px) {
+      ul.navbar {
+        width: 100%;
+        right: -100%;
+      }
+    }
+    ul li.menu-parent {
+      .mega-menu {
+        display: none;
+        @include position-style(absolute, 100%, 0);
+        background-color: #1b252e;
+        padding: 18px 25px;
+        white-space: nowrap;
+        border: 1px solid #283846;
+        width: 230px;
+        .menu-item a {
+          position: relative;
+          text-transform: capitalize;
+          padding: 10px 0;
+        }
+        .menu-item a::before {
+          content: "";
+          width: 0;
+          height: 3px;
+          @include position-style(absolute, null, -8px);
+          @extend %el-centered-v;
+          background-color: $main-color;
+          transition: $main-transition;
+        }
+        @media (min-width: 992px) {
+          .menu-item:hover a {
+            color: $main-white-color;
+            margin-left: 15px;
+            &::before {
+              left: -23px;
+              width: 15px;
+            }
+          }
+        }
+      }
+      @media (max-width: 991px) {
+        padding: 15px 0 0;
+        > a {
+          padding: 0 25px 15px !important;
+        }
+        .menu-opener {
+          font-size: 18px;
+          @include position-style(absolute, 9px, null, null, 30px);
+          width: 31px;
+          height: 31px;
+          background-color: #2f373e;
+          border-radius: 2px;
+          transition: $secondary-transition;
+        }
+        .mega-menu {
+          width: 100%;
+          height: 0;
+          position: static;
+          background-color: unset;
+          padding: 0;
+          border: none;
+          margin: 0;
+          overflow: hidden;
+          display: block;
+          transition: $secondary-transition;
+        }
+        .mega-menu.menu-active {
+          height: 99px;
+          + .menu-opener {
+            transform: rotate(90deg);
+          }
+        }
+        .mega-menu .menu-item {
+          border-bottom: none;
+          border-top: 1px solid #ffffff1a;
+          margin: 0;
+        }
+        .mega-menu .menu-item a {
+          padding-left: 20px !important;
+        }
+      }
+    }
+  }
+  .search {
+    margin-left: 10px;
+    padding-right: 25px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    &::after {
+      content: "";
+      width: 1px;
+      height: 13px;
+      @include position-style(absolute, null, null, null, 0);
+      @extend %el-centered-v;
+      background-color: #fff;
+      opacity: 0.25;
+    }
+  }
+  .lang {
+    margin-left: 10px;
+    display: flex;
+    @media (max-width: 575px) {
+      display: none;
+    }
+    i {
+      @include text-style(20px);
+      @extend %main-color;
+      margin-right: 10px;
+    }
+    select {
+      @include text-style(null, bold, $main-white-color);
+      background-color: transparent;
+      option {
+        color: black;
+      }
+    }
+  }
+}
+body.menu-active header nav .overlay {
+  width: 100vw;
+  z-index: 999;
+  opacity: 0.6;
+}

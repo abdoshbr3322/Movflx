@@ -1,4 +1,4 @@
-import {fetchData} from "./get_data.js";
+// import {fetchData} from "./get_data.js";
 
 $(document).ready(function () {
   // Open Mega Menu On Hover On Desktop

@@ -1,0 +1,191 @@
+@use "../helpers/globals" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/placeholders" as *;
+
+// the subcribe section style
+.subscribe {
+  background-image: url("../../../imgs/subscribe_bg.jpg");
+  background-color: $main-color;
+  padding: 45px 0;
+  .container {
+    @include media-query("max", 991px) {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+  .title {
+    @include text-style(null, null, $main-black-color, 1.4);
+    @include media-query("max", 991px) {
+      margin-bottom: 20px;
+    }
+    h3 {
+      @include text-style(30px, 700);
+    }
+    p {
+      @include text-style(14px, 500);
+    }
+  }
+  form {
+    position: relative;
+    @include media-query("max", 767px) {
+      width: 100%;
+      flex-direction: column;
+    }
+    input[type="email"] {
+      padding: 17px 182px 17px 25px;
+      border-radius: 4px;
+      box-shadow: 0 2px 7px 0 rgba(#000, 0.2);
+      width: 450px;
+      $breakpoints: 991px "width" 540px, 767px "padding" "17px 25px",
+        575px "width" 100%;
+      @each $point, $property, $value in $breakpoints {
+        @include media-query("max", $point) {
+          #{$property}: #{$value};
+        }
+      }
+    }
+    input[type="submit"] {
+      @include position-style(absolute, null, null, null, 3px);
+      @include text-style(14px, bold, $main-color);
+      padding: 15px 34px;
+      background-color: $section-bg-color;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: 0.4s;
+      border: 1px solid $section-bg-color;
+      @include media-query("max", 767px) {
+        position: static;
+        display: block;
+        text-align: center;
+        margin: 20px auto 0;
+      }
+      &:hover {
+        color: $main-black-color;
+        background-color: $main-color;
+      }
+    }
+  }
+}
+
+// the footer section style
+footer {
+  background-color: #20232a;
+  .footer-menu .nav,
+  .sub-nav .nav {
+    flex-shrink: 0;
+  }
+  @media (max-width: 767px) {
+    .footer-menu nav,
+    .sub-nav {
+      flex-direction: column;
+    }
+    .footer-menu ul.nav,
+    .sub-nav .nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+  }
+  .footer-menu .nav .nav-item a,
+  .sub-nav .nav a {
+    display: inline-block;
+    padding: 10px;
+    @include text-style(14px, bold, #c3c3c3);
+    text-transform: uppercase;
+    transition: $main-transition;
+    &:hover {
+      color: $main-color;
+    }
+  }
+  .footer-menu {
+    padding: 80px 0 35px;
+    position: relative;
+    @media (max-width: 991px) {
+      flex-direction: column;
+      .logo {
+        margin-bottom: 30px;
+      }
+    }
+    &::after {
+      content: "";
+      width: 100%;
+      height: 3px;
+      @include position-style(absolute, 100%, 0);
+      background-color: rgb(36, 31, 31);
+      box-shadow: 0 1px 3px 0 rgba(65, 60, 60, 0.897);
+    }
+    .nav .nav-item {
+      margin-right: 15px;
+    }
+    form {
+      margin-left: 15px;
+      position: relative;
+      @media (max-width: 767px) {
+        width: 100%;
+        margin: 0;
+      }
+      input[type="search"] {
+        width: 240px;
+        padding: 14px 50px 14px 20px;
+        background-color: #12151e;
+        border-radius: 30px;
+        @include text-style(12px, null, #fff);
+        @media (max-width: 767px) {
+          width: 100%;
+        }
+        &::-webkit-search-cancel-button {
+          display: none;
+        }
+        &::-moz-search-cancel-button {
+          display: none;
+        }
+      }
+      button[type="submit"] {
+        @include position-style(absolute, null, null, null, 15px);
+        @extend %main-color;
+        background-color: transparent;
+        font-size: 14px;
+        cursor: pointer;
+      }
+    }
+  }
+  .sub-nav {
+    padding: 50px 0 60px;
+    .nav a {
+      @include text-style(13px, 500, $main-p-color);
+    }
+    .social-links > a {
+      display: inline-flex;
+      @include circle(35px);
+      @include text-style(12px, null, #bcbcbc);
+      background-color: #12151e;
+      transition: $main-transition;
+      &:hover {
+        @extend %main-color;
+      }
+      & + a {
+        margin-left: 12px;
+      }
+    }
+  }
+  .copyright {
+    padding: 20px;
+    background-color: #171b22;
+    @media (max-width: 767px) {
+      .container {
+        flex-direction: column;
+        justify-content: center;
+      }
+      .text {
+        margin-bottom: 15px;
+      }
+    }
+    .text {
+      @include text-style(13px, 500, #bcbcbc);
+      a {
+        @extend %main-color;
+      }
+    }
+  }
+}

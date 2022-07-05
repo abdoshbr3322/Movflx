@@ -1,0 +1,115 @@
+@use "../helpers/globals" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/placeholders" as *;
+
+.movies {
+  @extend %main-padding;
+  background-color: #161419;
+  .categories {
+    margin-bottom: 40px;
+    .catg {
+      padding: 11px 27px;
+      @include text-style(12px, 600, #e3dfdf);
+      background-color: #20212b;
+      border-radius: 50px;
+      border: 1px solid #2d303d;
+      cursor: pointer;
+      &.active {
+        border: 1px solid $main-color;
+        color: #fff;
+      }
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px 30px;
+    position: relative;
+    $medias: 576px, 992px, 1200px;
+    $columns: 2;
+    @each $media in $medias {
+      @media (min-width: $media) {
+        grid-template-columns: repeat($columns, 1fr);
+      }
+      $columns: $columns + 1;
+    }
+  }
+  .box {
+    .image {
+      background-color: rgba(221, 214, 214, 1);
+      position: relative;
+      border-radius: 5px;
+      overflow: hidden;
+      min-width: 100%;
+      height: 420px;
+      animation: load-image 1s infinite linear alternate;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+      .box-overlay {
+        @extend %overlay;
+        background-image: linear-gradient(
+          to bottom,
+          transparent,
+          rgba(2, 1, 1, 0.76) 65%
+        );
+        transition: $secondary-transition;
+      }
+      &:hover .box-overlay {
+        opacity: 0.8;
+      }
+    }
+    .image .discription {
+      @include position-style(absolute, null, 0, -300px);
+      padding: 0 15px 20px;
+      width: 100%;
+      transition: $secondary-transition;
+      text-align: center;
+      .title {
+        @include text-style(18px, bold, $main-white-color, 1.4);
+      }
+      .discript-content {
+        padding-top: 30px;
+        @include text-style(13px, 600, $main-p-color, 1.5);
+        opacity: 0.95;
+      }
+    }
+    .image:hover .discription {
+      bottom: 0 !important;
+    }
+    .info {
+      margin-top: 20px;
+      &:nth-of-type(3) {
+        margin-top: 15px;
+      }
+      .name {
+        @include text-style(16px, bold, $main-white-color);
+        margin-right: 30px;
+        overflow: hidden;
+        max-width: 160px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .rate span {
+        @include text-style(11px, 600, $main-white-color);
+      }
+      .rate i {
+        @include text-style(14px, null);
+        @extend %main-color;
+      }
+      .quality {
+        @include text-style(11px, bold);
+        @extend %main-color;
+        padding: 5px 10px;
+        border: 2px solid $main-white-color;
+      }
+      .watch i {
+        margin-right: 5px;
+      }
+    }
+  }
+}

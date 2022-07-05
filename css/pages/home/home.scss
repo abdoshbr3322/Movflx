@@ -1,0 +1,124 @@
+@use "../../helpers/globals" as *;
+@use "../../helpers/mixins" as *;
+@use "../../helpers/placeholders" as *;
+@use "../../main.scss" as *;
+
+.banner {
+  background-image: url("../../../imgs/banner_bg01.jpg");
+  background-size: cover;
+  background-position: right top;
+}
+.main-sec {
+  padding: 140px 0;
+
+  .watch {
+    display: inline-block;
+    padding: 16px 34px;
+    @include text-style(12px, bold, $light-white-color);
+    background-color: #12151e;
+    border: 1px solid $main-color;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    transition: $main-transition;
+    &:hover {
+      background-color: $main-color;
+      color: $main-black-color;
+    }
+    i {
+      color: currentColor;
+    }
+  }
+}
+
+.services {
+  @extend %main-padding;
+  .container {
+    @media (max-width: 991px) {
+      flex-direction: column;
+      margin: 0 auto 50px;
+      width: 100%;
+    }
+    > * {
+      flex: 1;
+    }
+  }
+  .image {
+    margin-right: 70px;
+    @media (max-width: 991px) {
+      margin: 0 auto 50px;
+      width: 100%;
+    }
+  }
+  .image img {
+    width: 100%;
+  }
+  .content .alt-heading {
+    margin-bottom: 45px;
+  }
+  .content .serv {
+    margin-bottom: 30px;
+    justify-content: flex-start;
+    @include breakpoint("small-mobile") {
+      flex-direction: column;
+    }
+    .icon {
+      @include circle(90px);
+      padding: 5px;
+      margin: 0 auto 20px;
+      border: 1px dashed $main-color;
+      @media (min-width: 576px) {
+        @include margin-style(0, null, null, null, 20px);
+      }
+      i {
+        @include circle(80px);
+        @include text-style(30px, null, white);
+        transition: $slow-transition;
+      }
+    }
+    &:hover .icon i {
+      background-color: $main-color;
+    }
+    .info {
+      @include breakpoint("small-mobile") {
+        text-align: center;
+      }
+      .title {
+        @include text-style(18px, 700, $main-white-color);
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+.movies.top-rated {
+  .main-heading {
+    text-align: center;
+  }
+  .categories .catg {
+    @include text-style(12px, bold, #cacaca);
+    border-radius: 4px;
+    text-transform: uppercase;
+    padding: 17px 25px;
+    background-color: #0b1110;
+    border: none;
+    box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.8);
+    position: relative;
+    &.active {
+      color: #fff;
+      &::before,
+      &::after {
+        content: "";
+        width: 2px;
+        height: 13px;
+        background-color: $main-color;
+        position: absolute;
+        @extend %el-centered-v;
+      }
+      &::before {
+        left: 0;
+      }
+      &::after {
+        right: 0;
+      }
+    }
+  }
+}

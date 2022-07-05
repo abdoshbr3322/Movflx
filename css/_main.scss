@@ -1,0 +1,12 @@
+@use "./helpers/globals" as *;
+@use "./helpers/mixins" as *;
+@use "./helpers/placeholders" as *;
+@use "./rules";
+@use "./components/flex";
+@use "./components/headings";
+@use "./components/buttons";
+@use "./components/animations";
+@use "./components/usefull";
+@use "./layout/header";
+@use "./layout/movies_box";
+@use "./layout/footer";

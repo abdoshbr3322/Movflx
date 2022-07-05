@@ -16,12 +16,13 @@ export async function fetchData(api) {
 
 let boxParents = document.querySelectorAll(".movies .content");
 
+
+let box = document.querySelector(".movies .content .box").cloneNode(true);
+
 for (let i = 0; i < apis.length; i++) {
   let data = fetchData(apis[i]);
   addDataToBoxs(data, boxParents[i]);
 }
-
-let box = document.querySelector(".movies .content .box").cloneNode(true);
 
 document.querySelector(".movies .content .box").remove();
 
@@ -29,6 +30,7 @@ document.querySelector(".movies .content .box").remove();
  * @param {Promise} data
  * @param {Element} boxParent
  */
+
 
 async function addDataToBoxs(data, boxParent) {
   let info = await data;
@@ -72,14 +74,14 @@ function resizeImgs() {
   function getImageSize(image) {
     let h;
     let load = () => {
-      setTimeout(resize, 30);
+      setTimeout(resize, 50);
     };
     resize();
     function resize() {
       h = image.getBoundingClientRect().height;
       if (h) {
-        image.style.height = "100%";
         image.parentElement.style.height = "calc(100% - 73px)";
+        image.style.height = "100%";
         return;
       }
       load();

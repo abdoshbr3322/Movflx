@@ -1,0 +1,36 @@
+@use "../helpers/globals" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/placeholders" as *;
+
+.scale-toggle-loader {
+  @include position-style(absolute, null);
+  @extend %el-centered-h;
+  .item {
+    float: left;
+    @include circle(18px);
+    background-color: $main-color;
+    animation: scale-toggle 600ms infinite alternate;
+    $items: "one" "two" "three";
+    $delay: 0.3s;
+    @each $count in $items {
+      &.#{$count} {
+        animation-delay: $delay;
+      }
+      $delay : $delay + 0.3s;
+    }
+  }
+}
+@include animation(scale-toggle) {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.1);
+  }
+}
+@include animation(load-image) {
+  to {
+    background-color: rgba(216, 206, 206, 0.8);
+  }
+}

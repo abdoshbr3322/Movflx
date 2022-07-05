@@ -1,0 +1,49 @@
+@use "../helpers/globals" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/placeholders" as *;
+.main-p-style {
+  @include text-style(14px, 500, $main-p-color, 1.8);
+}
+.main-heading {
+  margin-bottom: 50px;
+  .sub {
+    @include text-style(12px, 600, $main-color);
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  h2 {
+    @include text-style(36px, null, #fff);
+  }
+}
+.alt-heading {
+  @media (max-width: 575px) {
+    text-align: center;
+  }
+  .sub {
+    @include text-style(12px, 600, $light-white-color);
+    letter-spacing: 1px;
+    position: relative;
+    text-transform: uppercase;
+    padding-left: 45px;
+    margin-bottom: 10px;
+    width: fit-content;
+    @media (max-width: 575px) {
+      text-align: center;
+      margin: 0 auto 10px;
+    }
+    &::before {
+      content: "";
+      @include position-style(absolute, null, 0);
+      @extend %el-centered-v;
+      width: 35px;
+      height: 3px;
+      background-color: $main-color;
+      position: absolute;
+    }
+  }
+  h2 {
+    @include text-style(36px, bold, $main-white-color);
+    margin-bottom: 20px;
+  }
+}

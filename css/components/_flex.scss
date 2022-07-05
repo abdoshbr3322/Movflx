@@ -1,0 +1,23 @@
+@use "../helpers/globals" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/placeholders" as *;
+.space-between-items {
+  @include flex(space-between, center);
+}
+$dirs: (
+  "v": "align-items",
+  "h": "justify-content",
+  "b": (
+    "align-items",
+    "justify-content",
+  ),
+);
+
+@each $axis, $properties_list in $dirs {
+  .items-centered-#{$axis} {
+    display: flex;
+    @each $property in $properties_list {
+      #{$property}: center;
+    }
+  }
+}
