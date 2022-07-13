@@ -42,3 +42,9 @@ button {
   @include width-media-query("min" ,992px ,970px);
   @include width-media-query("min" ,1200px ,1170px);
 }
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    width: calc(($i / 12) * 100%);
+  }
+}

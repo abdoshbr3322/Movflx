@@ -16,7 +16,6 @@ export async function fetchData(api) {
 
 let boxParents = document.querySelectorAll(".movies .content");
 
-
 let box = document.querySelector(".movies .content .box").cloneNode(true);
 
 for (let i = 0; i < apis.length; i++) {
@@ -30,7 +29,6 @@ document.querySelector(".movies .content .box").remove();
  * @param {Promise} data
  * @param {Element} boxParent
  */
-
 
 async function addDataToBoxs(data, boxParent) {
   let info = await data;
@@ -68,7 +66,7 @@ function resizeImgs() {
   }
 
   /**
-   * @param {number} index
+   *
    * @param {Element} image
    */
   function getImageSize(image) {

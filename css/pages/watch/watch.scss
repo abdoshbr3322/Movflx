@@ -2,3 +2,183 @@
 @use "../../helpers/mixins" as *;
 @use "../../helpers/placeholders" as *;
 @use "../../main.scss" as *;
+.main-sec {
+  padding: 65px 0;
+  .container {
+    align-items: flex-start;
+    > * {
+      flex: 1;
+    }
+    @media (max-width: 991px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .image {
+    margin-bottom: 50px;
+    position: relative;
+    max-width: 400px;
+    @media (min-width: 992px) {
+    max-width: 310px;
+      margin: 0;
+      margin-right: 50px;
+    }
+    img {
+      border-radius: 5px;
+    }
+    .play-icon {
+      position: absolute;
+      @extend %el-centered-b;
+      cursor: pointer;
+    }
+  }
+  .details {
+    .info {
+      margin-bottom: 20px;
+    }
+    .discription {
+      margin-bottom: 30px;
+    }
+    .primo {
+      padding: 0 25px 25px;
+      background-color: #242c38;
+      border: 1px solid #343434;
+      border-radius: 4px;
+      max-width: 520px;
+      flex-wrap: wrap;
+      position: relative;
+      > *:not(:last-child) {
+        margin-right: 20px;
+      }
+      > * {
+        margin-top: 25px !important;
+      }
+    }
+    .primo .share {
+      padding-right: 25px;
+      border-right: 1px solid rgba(255, 255, 255, 0.151);
+      text-align: center;
+      @include text-style(12px, null, #bcbcbc);
+      transition: $main-transition;
+      &:hover {
+        @extend %main-color;
+      }
+      i {
+        @include text-style(16px, null, #fff);
+        margin-bottom: 5px;
+      }
+    }
+    .primo .sub-title {
+      @include text-style(16px, 700, #fff);
+      div {
+        @include text-style(12px, 500, #bcbcbc);
+        margin-top: 5px;
+      }
+    }
+    .primo .watch {
+      padding: 13px 26px;
+      font-size: 10px;
+      background-color: transparent;
+      @media (min-width: 501px) {
+        position: absolute;
+        right: 25px;
+      }
+      &:hover {
+        background-color: $main-color;
+      }
+    }
+  }
+}
+.episodes {
+  @extend %main-padding;
+  background-color: #18171f;
+  .content {
+    align-items: flex-start;
+  }
+  i {
+    @extend %main-color;
+  }
+  .ep-content {
+    @media (max-width: 991px) {
+      width: 100%;
+    }
+    margin-right: 30px;
+    .head {
+      padding-bottom: 25px;
+      position: relative;
+      &::before {
+        @extend %custom-border;
+      }
+    }
+    .head .main-heading {
+      margin: 0;
+    }
+    .head .views {
+      @include text-style(14px ,500 ,#e3dfdf);
+      i {
+        margin-left: 12px;
+      }
+    }
+    .season {
+      padding-top: 30px;
+      margin-bottom: 25px;
+      @include text-style(null ,700 ,#e0e0e0);
+    }
+    .episode-list {
+      padding: 30px;
+      background-color: #040406;
+      .ep {
+        padding-bottom: 15px;
+        border-bottom: 1px solid #242426;
+        margin-bottom: 20px;
+        display: flex;
+        @media (max-width: 491px) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+      .ep .title {
+        @include text-style(null ,700 ,#c8c8c8);
+        display: flex;
+        transition: $main-transition;
+        &:hover {
+          @extend %main-color;
+        }
+      }
+      .ep .title i {
+        margin-right: 15px;
+      }
+      .ep .delay {
+        @media (max-width: 491px) {
+          margin-top: 15px;
+        }
+        margin-left: 25px;
+        @include text-style(14px ,500 ,#e3dfdf);
+        i {
+          margin-right: 7px;
+        }
+      }
+    }
+  }
+  @media (max-width: 991px) {
+    .image {
+      display: none;
+    }
+  }
+  .about {
+    margin-top: 50px;
+    .title {
+      padding: 25px 40px;
+      @include text-style(24px ,bold ,#fff);
+      background-color: rgba(0, 0, 0, 0.35);
+      border: 1px solid #242426;
+      margin-bottom: 30px;
+      span {
+        @extend %main-color;
+      }
+    }
+    .discription {
+      padding-left: 35px;
+    }
+  }
+}

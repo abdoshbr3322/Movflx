@@ -31,3 +31,20 @@
     opacity: 1;
   }
 }
+.watch {
+  display: inline-block;
+  padding: 16px 34px;
+  @include text-style(12px, bold, $light-white-color);
+  background-color: #12151e;
+  border: 1px solid $main-color;
+  border-radius: 50px;
+  letter-spacing: 1px;
+  transition: $main-transition;
+  &:hover {
+    background-color: $main-color;
+    color: $main-black-color;
+  }
+  i {
+    color: currentColor;
+  }
+}

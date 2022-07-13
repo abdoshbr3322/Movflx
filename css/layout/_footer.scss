@@ -108,12 +108,7 @@ footer {
       }
     }
     &::after {
-      content: "";
-      width: 100%;
-      height: 3px;
-      @include position-style(absolute, 100%, 0);
-      background-color: rgb(36, 31, 31);
-      box-shadow: 0 1px 3px 0 rgba(65, 60, 60, 0.897);
+      @extend %custom-border;
     }
     .nav .nav-item {
       margin-right: 15px;

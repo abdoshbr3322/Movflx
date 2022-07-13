@@ -18,71 +18,253 @@
 </head>
 
 <body>
-  <header>
-    <div class="container space-between-items">
-      <div class="logo">
-        <img src="../imgs/logo.png" alt="logo">
-      </div>
-      <nav class="items-centered-v">
-        <div class="overlay"></div>
-        <ul class="navbar items-centered-v">
-          <li class="mobile-menu-head">
-            <div class="logo">
-              <img src="../imgs/logo.png" alt="logo">
+
+  <div class="scroll-to-top items-centered-b">
+    <i class="fas fa-angle-up"></i>
+  </div>
+
+  <div class="banner">
+    <header>
+      <div class="container space-between-items">
+        <a class="logo" href="../">
+          <img src="../imgs/logo.png" alt="logo">
+        </a>
+        <nav class="items-centered-v">
+          <div class="overlay"></div>
+          <ul class="navbar items-centered-v">
+            <li class="mobile-menu-head">
+              <div class="logo">
+                <img src="../imgs/logo.png" alt="logo">
+              </div>
+              <div class="menu-closer" data-menu="header .navbar">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="./" class="title">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="title">Anime</a>
+            </li>
+            <li class="nav-item menu-parent">
+              <a href="#" class="title">My List</a>
+              <ul class="mega-menu">
+                <li class="menu-item">
+                  <a href="./demo-user/watch-list/">Watch List</a>
+                </li>
+                <li class="menu-item">
+                  <a href="./demo-user/wait-list/">Waitlist</a>
+                </li>
+              </ul>
+              <div class="menu-opener items-centered-b" data-menu="header nav .mega-menu">
+                <i class="fas fa-angle-down"></i>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="./login/" class="title">Login</a>
+            </li>
+            <li class="nav-item signup">
+              <a href="./signup/" class="title custom-btn">Sign Up</a>
+            </li>
+            <div class="social-links">
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube"></i></a>
             </div>
-            <div class="menu-closer" data-menu="header .navbar">
-              <i class="fa-solid fa-xmark"></i>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a href="./" class="title active">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="title">Anime</a>
-          </li>
-          <li class="nav-item menu-parent">
-            <a href="#" class="title">My List</a>
-            <ul class="mega-menu">
-              <li class="menu-item">
-                <a href="./demo-user/watch-list/">Watch List</a>
-              </li>
-              <li class="menu-item">
-                <a href="./demo-user/wait-list/">Waitlist</a>
-              </li>
-            </ul>
-            <div class="menu-opener items-centered-b" data-menu="header nav .mega-menu">
-              <i class="fas fa-angle-down"></i>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a href="./login/" class="title">Login</a>
-          </li>
-          <li class="nav-item signup">
-            <a href="./signup/" class="title custom-btn">Sign Up</a>
-          </li>
-          <div class="social-links">
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-pinterest"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          </ul>
+          <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
           </div>
-        </ul>
-        <div class="search">
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <div class="lang">
+            <i class="fa-solid fa-globe"></i>
+            <select name="lang" id="lang">
+              <option value="EN">EN</option>
+              <option value="EN">AR</option>
+            </select>
+          </div>
+          <div class="menu-opener" data-menu="header .navbar"><i class="fa-solid fa-bars"></i></div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-sec">
+      <div class="container space-between-items">
+        <div class="image">
+          <img src="../imgs/movie-4.jpg" alt="one-piece">
+          <img src="../imgs/play_icon.png" alt="play" class="play-icon">
+
         </div>
-        <div class="lang">
-          <i class="fa-solid fa-globe"></i>
-          <select name="lang" id="lang">
-            <option value="EN">EN</option>
-            <option value="EN">AR</option>
-          </select>
+        <div class="details">
+          <h5 class="title">New Episodes</h5>
+          <h1 class="heading">One Piece</h1>
+          <div class="info top-movie">
+            <span class="age-c">-</span>
+            <span class="quality">HD</span>
+            <span class="categories"><a href="./categories/action">action</a>, <a
+                href="./categories/drama">Drama</a></span>
+            <span class="date">
+              <i class="far fa-calendar-alt"></i> 2022
+            </span>
+            <span class="time"><i class="far fa-clock"></i> 120 min</span>
+          </div>
+          <div class="discription main-p-style">
+            Lorem ipsum dolor sit amet, consecetur adipiscing elseddo eiusmod tempor.There are many variations of
+            passages of lorem Ipsum available, but the majority have suffered alteration in some injected humour.
+          </div>
+          <div class="primo items-centered-v">
+            <a class="share" href="#">
+              <i class="fa-solid fa-share-alt"></i>
+              <div>Share</div>
+            </a>
+            <h5 class="sub-title">
+              Primo Video
+              <div>Streaming Channels</div>
+            </h5>
+            <a href="./watch?name=one-piece" class="watch"><i class="fas fa-play"></i> Watch Now</a>
+
+          </div>
         </div>
-        <div class="menu-opener" data-menu="header .navbar"><i class="fa-solid fa-bars"></i></div>
-      </nav>
+      </div>
     </div>
-  </header>
-  <script src="../js/main.js" type="module"></script>
+  </div>
+
+  <div class="episodes">
+    <div class="container">
+      <div class="content space-between-items">
+        <div class="ep-content col-8">
+          <div class="head space-between-items">
+            <div class="main-heading">
+              <div class="sub">Online Streaming</div>
+              <h2>Watch Full Episodes</h2>
+            </div>
+            <div class="views">
+              <span>2.7 million</span>
+              <i class="far fa-eye"></i>
+            </div>
+          </div>
+          <div class="season">Season 1</div>
+          <ul class="episode-list">
+            <li class="ep space-between-items">
+              <a href="#" class="title">
+                <i class="fas fa-play"></i>
+                Episode 1 - Lorem ipsum
+              </a>
+              <div class="delay">
+                <i class="far fa-clock"></i>
+                22 Min
+              </div>
+            </li>
+            <li class="ep space-between-items">
+              <a href="#" class="title">
+                <i class="fas fa-play"></i>
+                Episode 2 - Lorem ipsum
+              </a>
+              <div class="delay">
+                <i class="far fa-clock"></i>
+                22 Min
+              </div>
+            </li>
+            <li class="ep space-between-items">
+              <a href="#" class="title">
+                <i class="fas fa-play"></i>
+                Episode 3 - Lorem ipsum
+              </a>
+              <div class="delay">
+                <i class="far fa-clock"></i>
+                22 Min
+              </div>
+            </li>
+            <li class="ep space-between-items">
+              <a href="#" class="title">
+                <i class="fas fa-play"></i>
+                Episode 4 - Lorem ipsum
+              </a>
+              <div class="delay">
+                <i class="far fa-clock"></i>
+                22 Min
+              </div>
+            </li>
+            <li class="ep space-between-items">
+              <a href="#" class="title">
+                <i class="fas fa-play"></i>
+                Episode 5 - Lorem ipsum
+              </a>
+              <div class="delay">
+                <i class="far fa-clock"></i>
+                22 Min
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="image col-4">
+          <img src="../imgs/movie-4.jpg" alt="">
+        </div>
+      </div>
+      <div class="about">
+        <h2 class="title">
+          About <span>History</span>
+        </h2>
+        <p class="discription main-p-style">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate vel mollitia id possimus, at tenetur est
+          aut ratione hic ducimus sint enim eius dolores sed asperiores eaque tempore? Officiis, inventore.
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate vel mollitia id possimus, at tenetur est
+          aut ratione hic ducimus sint enim eius dolores sed asperiores eaque tempore? Officiis, inventore.
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate vel mollitia id possimus, at tenetur est
+          aut ratione hic ducimus sint enim eius dolores sed asperiores eaque tempore? Officiis, inventore.
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate vel mollitia id possimus, at tenetur est
+          aut ratione hic ducimus sint enim eius dolores sed asperiores eaque tempore? Officiis, inventore.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-menu space-between-items">
+        <div class="logo">
+          <img src="../imgs/logo.png" alt="logo">
+        </div>
+        <nav class="items-centered-v">
+          <ul class="nav items-centered-v">
+            <li class="nav-item"><a href="#">Home</a></li>
+            <li class="nav-item"><a href="#">Movie</a></li>
+            <li class="nav-item"><a href="#">Tv Shows</a></li>
+            <li class="nav-item"><a href="#">Pages</a></li>
+            <li class="nav-item"><a href="#">Pricing</a></li>
+          </ul>
+          <form action="" class="items-centered-v">
+            <input type="search" name="q" placeholder="Find Favourite Movie">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </nav>
+      </div>
+      <div class="sub-nav space-between-items">
+        <ul class="nav items-centered-v">
+          <li class="nav-item"><a href="#">FAQ</a></li>
+          <li class="nav-item"><a href="#">Help Center</a></li>
+          <li class="nav-item"><a href="#">Terms Of Use</a></li>
+          <li class="nav-item"><a href="#">Privacy</a></li>
+        </ul>
+        <div class="social-links">
+          <a href="#" class="items-centered-b"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="items-centered-b"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="items-centered-b"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#" class="items-centered-b"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <div class="container space-between-items">
+        <div class="text">Copyright &copy; 2022. All Rights Reserved By <a href="#">Movflx</a></div>
+        <div class="image">
+          <img src="../imgs/card_img.png" alt="Payment Methods">
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
 </body>
 
 </html>

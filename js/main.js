@@ -13,10 +13,10 @@ $(document).ready(function () {
     if (megaMenu.hasClass("desktop")) {
       megaMenuOpener.hover(
         function () {
-          $(megaMenu).slideDown("fast");
+          megaMenu.slideDown("fast");
         },
         function () {
-          $(megaMenu).slideUp("fast");
+          megaMenu.slideUp("fast");
         }
       );
     }
@@ -30,7 +30,7 @@ $(document).ready(function () {
       $(signUp).addClass("custom-btn");
     } else {
       megaMenu.removeClass("desktop").css("display", "block");
-      megaMenuOpener.off("hover");
+      megaMenuOpener.off("mousedown");
       $(signUp).removeClass("custom-btn");
     }
   }
@@ -86,4 +86,3 @@ $(document).ready(function () {
     });
   });
 });
-
