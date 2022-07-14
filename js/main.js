@@ -86,3 +86,32 @@ $(document).ready(function () {
     });
   });
 });
+
+function resizeImgs() {
+  let images = Array.from(
+    document.querySelectorAll(".movies .content .box .image img")
+  );
+  callImgs();
+  window.onresize = callImgs;
+
+  function callImgs() {
+    images.forEach(getImageSize);
+  }
+
+  function getImageSize(image) {
+    let h;
+    let load = () => {
+      setTimeout(resize, 50);
+    };
+    resize();
+    function resize() {
+      h = image.getBoundingClientRect().height;
+      if (h) {
+        image.parentElement.style.height = "calc(100% - 73px)";
+        image.style.height = "100%";
+        return;
+      }
+      load();
+    }
+  }
+}
