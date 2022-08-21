@@ -1,5 +1,3 @@
-// import {fetchData} from "./get_data.js";
-
 $(document).ready(function () {
   // Open Mega Menu On Hover On Desktop
   let megaMenuOpener = $("header nav ul li.menu-parent");

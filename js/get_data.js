@@ -28,5 +28,3 @@ async function addDataToBoxs(data, boxParent, box, blocked) {
     resizeImgs();
   }
 }
-
-export { fetchData, addDataToBoxs };
