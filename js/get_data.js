@@ -7,7 +7,7 @@ async function fetchData(api) {
   return info;
 }
 
-async function addDataToBoxs(data, boxParent, box, blocked) {
+async function renderData(data, boxParent, box, blocked) {
   let info = await data;
   $(boxParent).empty();
   for (let i = 0; i < (info.length > 25 ? 25 : info.length); i++) {
